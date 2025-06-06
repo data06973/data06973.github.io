@@ -1,0 +1,204 @@
+---
+import { about } from "../data/data.json";
+import HoverReveal from "./HoverReveal.astro";
+import SectionTitle from "./SectionTitle.astro";
+---
+
+<section id="about" class="h-card" itemscope itemtype="https://schema.org/Person">
+  <div class="text">
+    <p class="name p-name" itemprop="name" aria-label="سجاد سرلکی">{about.paragraphs[0]}</p>
+    <p class="name p-name" itemprop="name" style="display: none;" >سجاد سرلکی</p>
+
+    <p class="p-summary" itemprop="description">
+      {about.paragraphs[1].split("Data Enthusiast")[0]}
+      <span class="gifText" itemprop="jobTitle">Data Enthusiast</span>
+     {about.paragraphs[1].split("Data Enthusiast")[1]}{" "}
+    </p>
+    
+    <div class="social-media p-contact">
+      {
+        about.social.map((item) => (
+          <a
+            itemprop="contactPoint"
+            href={item.link}
+            target="_blank"
+            id={item.name}
+            data-static-icon={item.icon}
+            class="social-item"
+            style=`background-image:url('${item.icon}'); `
+            title={`Link to my ${item.name}`}
+          ></a>
+        ))
+      }
+    </div>
+  </div>
+  
+  <div class="picture">
+    <img src="asset/imgs/hritvik.jpg" aria-label="سجاد سرلکی" alt="Hritvik Gaind" class="image" itemprop="image" />
+  </div>
+
+
+  <SectionTitle
+    text="Work Experience"
+    color="var(--reddish-orange-color)"
+    hrefLink="#work"
+    beckon="true"
+    position="left"
+  />
+</section>
+
+<style>
+  #about {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    perspective: 10000px;
+    gap: 10%;
+    min-height: 90vh;
+    margin-left: 2rem;
+    overflow: hidden;
+  }
+  .social-media {
+    display: flex;
+    gap: 1rem;
+  }
+  .social-item{
+    background-size:cover; 
+    background-position: center center;
+    width: 50px;
+    height:50px; 
+    border-radius: 48px;
+    border: 1px solid #fff1;
+  }
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 1.5rem;
+    cursor: alias;
+    margin-top: 10%;
+  }
+  .name {
+    all: unset;
+    font-size: 3.75rem;
+    line-height: 2rem;
+    font-family: var(--second-font-family);
+    color: #fffd;
+  }
+  .gifText {
+    color: var(--blue-color);
+    font-weight: 700;
+  }
+  .picture {
+    position: relative;
+    width: 400px;
+    height: 400px;
+  }
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 3rem;
+    border-radius: 30px;
+  }
+  .portal {
+    height: 45rem;
+    position: absolute;
+    z-index: -1;
+    bottom: -15%;
+    left: 50%;
+    transform: rotate(90deg) rotateY(80deg);
+    transform-style: preserve-3d;
+  }
+  .title {
+    font-size: 2rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 575px) {
+    #about {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10%;
+      margin-bottom: 0;
+    }
+    .text{
+      line-height: 2rem;
+    }
+    .text p{
+      max-width: 90%;
+    }
+    .text p:first-child{
+      line-height: 3rem;
+    }
+    .picture {
+      align-self:center;
+      margin-right: 3rem;
+    }
+    .picture img{
+      padding: 0;
+      margin: 0;
+      top:0;
+      transform: scale(.9);
+    }
+    .portal {
+      display: none;
+    }
+  }
+
+  @media (min-width: 576px) and (max-width: 991px) {
+    #about {
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .picture {
+      order: -1;
+    }
+    .portal {
+      display: none;
+    }
+  }
+
+  @media (min-width: 992px) and (max-width: 1200px) {
+    .name{
+      line-height: 3rem;
+    }
+    .picture{
+      right: -3rem
+    }
+    .portal{
+      width: 500px;
+      left: 35%;
+    }
+  }
+  
+  @media (max-width: 320px) {
+    .name{
+      line-height: 3rem;
+    }
+    .picture{
+      right: -3rem;
+      transform: scale(.5)
+    }
+    .portal{
+      width: 50px;
+      left: 35%;
+    }
+  }
+</style>
+
+<script>
+  const social = document.querySelector(".social-media");
+  social.querySelectorAll("a").forEach((element) => {
+    element.addEventListener("mouseenter", (e) => {
+      let image = element.getAttribute("data-static-icon");
+      element.style.backgroundImage = `url('${image}')`;
+    });
+    element.addEventListener("mouseleave", (e) => {
+      let image = element.getAttribute("data-static-icon");
+      element.style.backgroundImage = `url('${image}')`;
+    });
+  });
+</script>

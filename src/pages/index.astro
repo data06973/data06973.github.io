@@ -1,0 +1,100 @@
+---
+import Header from "../components/Header.astro";
+import About from "../components/About.astro";
+import Skills from "../components/Skills.astro";
+import Education from "../components/Education.astro";
+import WorkExperience from "../components/WorkExperience.astro";
+import Projects from "../components/Projects.astro";
+import Hobbies from "../components/Hobbies.astro";
+import "../styles/global.css";
+import { SEO } from 'astro-seo';
+
+const seoData = {
+  title: "Hritvik Gaind",
+  description: "I am a Data Enthusiast over 3 years of professional experience",
+  openGraph: {
+    basic: {
+      title: "Hritvik Gaind",
+      type: "website",
+      image: "/asset/imgs/hritvik.jpg",
+    },
+  },
+  twitter: {
+    creator: "@yourTwitterHandle",
+  },
+  extend: {
+    link: [
+      { rel: "icon", href: "asset/imgs/favicon.ico" },
+      { rel: "manifest", href: "/site.webmanifest" },
+    ],
+meta: [
+      { name: "theme-color", content: "#ffffff" },
+    ],
+  },
+};
+---
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="language" content="English, Persian" />
+
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="google-site-verification"
+			content="-aK5FRC44Dth0-iMsm1a8V2N-xAvxF--YYtm9TBmeEw"
+		/>
+		<meta name="robots" content="index, follow" />
+		<meta
+			name="google-site-verification"
+			content="-aK5FRC44Dth0-iMsm1a8V2N-xAvxF--YYtm9TBmeEw"
+		/>
+		<SEO {...seoData} />
+		
+			
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-FCP95DVKWL"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+
+			gtag("config", "G-FCP95DVKWL");
+		</script>
+	</head>
+
+	<body>
+		<Header />
+		<main class="h-resume">
+			<About />
+			<WorkExperience />
+			<Skills />
+			<Projects />
+			<Education />
+			<!-- <Hobbies  /> -->
+		</main>
+	</body><!-- <script>
+  const themeToggle = document.getElementById("theme-toggle");
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("light-theme");
+    const theme = document.body.classList.contains("light-theme")
+      ? "light"
+      : "dark";
+    localStorage.setItem("theme", theme);
+  });
+
+  // Load the saved theme from localStorage
+  document.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "light") {
+      document.body.classList.add("light-theme");
+    }
+  });
+</script> -->
+</html>

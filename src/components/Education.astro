@@ -1,0 +1,304 @@
+---
+import { educationContent } from "../data/data.json";
+import Animat from "./Animat.astro";
+import SectionTitle from "./SectionTitle.astro";
+---
+
+<section id="education" itemscope itemtype="https://schema.org/EducationEvent">
+  <div class="education-container">
+    {educationContent.degrees.map((degree, index) => (
+      <div class="education h-event" key={index}>
+        <Animat class="education-desc" animationName="fadeIn-from-left">
+          <div class="degree-content">
+            <img
+              class="education-img"
+              src={degree.imgs.amirkabir_icon}
+              alt="University Icon"
+            />
+            <h2 class="title" itemprop="name">
+              {degree.degree}
+            </h2>
+            <h3 class="institution-year" itemprop="location">
+              <span class="institution">{degree.institution}</span>
+              <span class="year-range">
+                <span itemprop="startDate">{degree.year.split("-")[0]}</span> - 
+                <span itemprop="endDate">{degree.year.split("-")[1]}</span>
+              </span>
+            </h3>
+            <ul class="education-desc-list">
+              {degree.description.map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </Animat>
+        <Animat class="graduation-imgs" delay="200" animationName="fadeIn-from-left">
+          <div class="photo-wrapper">
+            <img
+              src={degree.imgs.graduation}
+              alt="Graduation Photo"
+              class="grad"
+              loading="lazy"
+            />
+            <img 
+              src={degree.imgs.sardar} 
+              alt="University Photo" 
+              class="sardar" 
+              loading="lazy"
+            />
+          </div>
+        </Animat>
+      </div>
+    ))}
+  </div>
+</section>
+<style>
+  .title {
+  white-space: normal;
+  display: inline-block;
+  max-width: 95%;
+  line-height: 1.5; /* More spacing between lines */
+  margin: 0 0 0.75rem 0; /* Top Right Bottom Left */
+  padding: 0.25rem 0;
+  word-break: break-word;
+  overflow-wrap: anywhere; /* More aggressive breaking */
+  hyphens: auto; /* Adds hyphenation when breaking */
+}
+  .institution {
+  margin-bottom: 0.5rem;
+  white-space: nowrap; /* Keeps text in one line */
+  display: inline-block; /* Needed for nowrap to work */
+  /* Removed overflow and text-overflow to prevent truncation */
+}
+
+  .institution-year {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem 0;
+  }
+  
+  .year-range {
+    font-size: 0.9em;
+    color: var(--text-secondary-color);
+    display: block; /* Ensures year stays on new line */
+  }
+
+  #education {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  .education-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 0;
+  }
+  .education {
+    width: 90%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .degree-content {
+    width: 80%;
+    margin-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .education-desc {
+    font-weight: 100;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+  }
+  .education-desc h2 {
+    font-family: var(--second-font-family);
+    margin: 0;
+    line-height: 1.5rem;
+    color: var(--blue-color);
+  }
+  .education-desc-list {
+    list-style-type: none;
+    margin: 0 0.5rem;
+    padding: 0;
+    line-height: 1.5rem;
+  }
+
+  /* Graduation Photos Section */
+  .graduation-imgs {
+    width: 30%;
+    margin-right: 0rem;
+    position: relative;
+    margin-top: 3rem;
+    min-height: 220px;
+  }
+  .photo-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .grad {
+    position: absolute;
+    top: 0;
+    right: 2rem;
+    transform: scale(1.3);
+    z-index: 2;
+    max-height: 250px;
+  }
+  
+
+  .education-img {
+    width: 10%;
+    margin-bottom: 0.5rem;
+    align-self: flex-start;
+  }
+
+  @media (max-width: 1024px) {
+    .education {
+      flex-direction: column;
+      padding: 0 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .education-title {
+      font-size: 1.4rem;
+    }
+    
+    .degree-content,
+    .graduation-imgs {
+      width: 90%; /* Wider container */
+      margin: 0 auto 1.5rem;
+    }
+    
+    .graduation-imgs {
+      min-height: 200px; /* Increased */
+      margin-top: 2rem;
+      max-width: 500px; /* Constrain maximum width */
+    }
+    
+    .grad {
+      max-height: 250px; /* Larger image */
+    }
+  }
+
+  /* Small Tablet (768px and below) */
+  @media (max-width: 768px) {
+    .education {
+      padding: 0 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .graduation-imgs {
+      width: 95%;
+      max-width: 450px;
+    }
+    
+    .education-title {
+      font-size: 1.3rem;
+    }
+    
+    .education-desc {
+      font-size: 1.1rem;
+      line-height: 1.8rem;
+    }
+    
+    .education-desc-list {
+      font-size: 0.9rem;
+    }
+    
+    .education-img {
+      width: 15%;
+    }
+    
+    .institution {
+      white-space: normal;
+    }
+    
+    .grad {
+      max-height: 220px;
+    }
+  }
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+  .education-container {
+    gap: 1.5rem;
+    padding-left: 0.5rem;
+    margin-left: 0.25rem;
+    box-sizing: border-box; /* Padding is included in width */
+  }
+  
+  .education {
+    padding: 0;
+    margin: 0 0 1rem 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .degree-content {
+    padding-left: 0;
+    margin-left: 0.25rem;
+    width: calc(100% - 0.5rem); /* Accounts for margin */
+    overflow-wrap: anywhere; /* Force wrap anywhere */
+    word-break: break-word;
+    hyphens: manual;
+    display: block; /* Make sure this element always occupies full width */
+  }
+  
+  /* For text elements that should always wrap to a new line */
+  .education-desc,
+  .education-desc-list,
+  .institution,
+  .education-title {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    hyphens: manual;
+    display: block; /* Set to block so they automatically get their own line */
+  }
+  
+  .education-title {
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+    padding-left: 0.25rem;
+    margin-left: 0;
+    /* Remove width property since block-level will fill container by default */
+  }
+  
+  /* IMAGE STYLES REMAIN EXACTLY THE SAME */
+  .graduation-imgs {
+    width: 100%;
+    max-width: 400px;
+    min-height: 150px;
+    margin: 0 auto 1.5rem;
+    padding: 0.5rem;
+  }
+  
+  .grad {
+    max-height: 180px;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* Extra Small Mobile (390px and below) */
+  @media (max-width: 390px) {
+    .education-title {
+      font-size: 1rem;
+      line-height: 1.3rem;
+      white-space: normal; /* Ensure no forced single-line */
+    }
+    
+    /* More aggressive wrapping for smallest screens */
+    .degree-content {
+      word-break: break-all; /* Force breaks between any letters */
+    }
+  }
+}
+
+</style>

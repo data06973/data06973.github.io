@@ -1,0 +1,51 @@
+---
+const className = Astro.props.class;
+const { text, gifUrl, position = 'top', size =100 } = Astro.props;
+---
+
+<style>
+  .hover-container {
+    position: relative;
+    display: inline;
+    /* top: 10rem;
+    right: 10rem; */
+  }
+
+  .hover-text {
+    display: inline;
+    cursor: inherit;
+  }
+
+  .hover-gif {
+    position: absolute;
+    left: 0%;
+    visibility: hidden;
+  }
+
+  .hover-text:hover ~ .hover-gif {
+    visibility: visible !important;
+  }
+:root{
+  --gif-size-to-position: -200px
+}
+  .top{
+    top: var(--gif-size-to-position);
+  }
+  .botton{
+    bottom: var(--gif-size-to-position);
+  }
+  .left{
+    left:var(--gif-size-to-position)
+  }
+  .right{
+    right: var(--gif-size-to-position);
+  }
+  .inset{
+    inset: 0;
+  }
+</style>
+
+<span class="hover-container">
+  <span class={`hover-text ${className}`} >{text}</span>
+ <img class={`hover-gif ${position} `}  src={gifUrl} alt={`a gif of a ${text}`} width={size} height={size}  >
+</span>

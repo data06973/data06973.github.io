@@ -1,0 +1,14 @@
+   ---
+   import {hobbiesContent} from '../data/data.json';
+const className = Astro.props.class;
+
+   ---
+
+   <section id="hobbies">
+     <h2>{hobbiesContent.title}</h2>
+     <ul>
+       {hobbiesContent.hobbies.map((hobby) => (
+         <li>{hobby}</li>
+       ))}
+     </ul>
+   </section>
