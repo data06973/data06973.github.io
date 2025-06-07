@@ -12,25 +12,30 @@ import SectionTitle from "./SectionTitle.astro";
       {about.paragraphs[1].split("Data Enthusiast")[0]}
       {about.paragraphs[1].split("Data Enthusiast")[1]}{" "}
     </p>
-
+    <div class="reflection">
+      {about.reflection.paragraphs.map((para) => (
+        <p>{para}</p>
+      ))}
+    </div>
     <div class="social-media p-contact">
       {
         about.social.map((item) => (
-          <a
-            itemprop="contactPoint"
-            href={item.link}
-            target="_blank"
-            id={item.name}
-            data-static-icon={item.icon}
-            class="social-item"
-            style=`background-image:url('${item.icon}'); `
-            title={`Link to my ${item.name}`}
-          ></a>
+            <a
+                itemprop="contactPoint"
+                href={item.link}
+                target="_blank"
+                id={item.name}
+                data-static-icon={item.icon}
+                class="social-item"
+                style=`background-image:url('${item.icon}'); `
+                title={`Link to my ${item.name}`}
+            ></a>
         ))
       }
     </div>
   </div>
-  
+
+
   <div class="picture">
     <img src="asset/imgs/mel.jpg" class="image" itemprop="image" />
   </div>
@@ -50,9 +55,9 @@ import SectionTitle from "./SectionTitle.astro";
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: start;
+    align-items: stretch;
     perspective: 10000px;
-    gap: 10%;
+    gap: 5%;
     min-height: 90vh;
     margin-left: 2rem;
     overflow: hidden;
@@ -75,7 +80,10 @@ import SectionTitle from "./SectionTitle.astro";
     align-items: flex-start;
     font-size: 1.5rem;
     cursor: alias;
-    margin-top: 10%;
+    margin-top: 5%;
+    flex: 1 1 50%;
+    min-width: 320px;
+    max-width: 600px;
   }
   .name {
     font-size: 3.75rem;
@@ -93,15 +101,27 @@ import SectionTitle from "./SectionTitle.astro";
   }
   .picture {
     position: relative;
-    width: 400px;
-    height: 400px;
+    flex: 1 1 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 250px;
+    max-width: 50%;
+    width: 50%;
+    height: auto;
+    max-height: 80vh;
+    overflow: visible;
   }
   .image {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    padding: 3rem;
+    height: auto;
+    max-width: 100%;
+    max-height: 50%;
+    object-fit: contain;
+    padding: 2rem;
     border-radius: 30px;
+    box-sizing: border-box;
+    display: block;
   }
   .portal {
     height: 45rem;
@@ -152,10 +172,21 @@ import SectionTitle from "./SectionTitle.astro";
   @media (min-width: 576px) and (max-width: 991px) {
     #about {
       flex-direction: column;
+      align-items: center;
       gap: 2rem;
+      margin-left: 0;
+    }
+    .text {
+      margin-top: 2rem;
+      max-width: 90vw;
     }
     .picture {
-      order: -1;
+      max-width: 90vw;
+      min-width: 200px;
+    }
+    .image {
+      padding: 1rem;
+      max-height: 50vh;
     }
     .portal {
       display: none;

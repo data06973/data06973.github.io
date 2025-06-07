@@ -22,7 +22,14 @@
 				"link": "/asset/resume.pdf",
 				"icon": "/asset/imgs/resume_icon.png"
 			}
-		]
+		],
+		"reflection": {
+			"paragraphs": [
+				"One of the most rewarding moments in my data science journey came during a project where I had to apply dimensionality reduction techniques to uncover hidden patterns in a large dataset. Initially, I struggled to understand how methods like PCA (Principal Component Analysis) could reduce features without losing essential information. The math felt abstract, and interpreting the output was even harder.",
+				"But after experimenting with visualizations and reading case studies, it finally clicked: PCA wasn’t just reducing data—it was rotating it to reveal structure that wasn’t obvious in the original dimensions. I paired PCA with clustering algorithms like K-Means, and the improved cluster separation in two-dimensional plots was a breakthrough. It felt like going from a blurry image to one in focus.",
+				"This experience taught me that understanding comes from doing, not just reading. The challenge pushed me to move beyond theoretical knowledge and trust the process of iteration and visual feedback—something I now carry into every project."
+			]
+		}
 	},
 	"skillsContent": {
 		"title": "Skills",
@@ -136,9 +143,5 @@
 				]
 			}
 		]
-	},
-	"hobbiesContent": {
-		"title": "Hobbies",
-		"hobbies": ["Story Telling"]
 	}
 }
