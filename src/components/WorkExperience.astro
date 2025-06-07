@@ -62,15 +62,17 @@ import Animate from "./Animat.astro"
     overflow: hidden;
     position: relative;
     border-radius: 0.5rem;
-    padding: 1%;
-    font-size: 1.2rem;
-    background-color: #222;
     padding: 2rem;
-    background: linear-gradient(#12181b, #12181b) padding-box,
-      linear-gradient(to right, #f55, #88f) border-box;
-    border-radius: 0.5rem;
-    border: 4px solid transparent;
+    font-size: 1.2rem;
     line-height: 1.5rem;
+    /* Colorful border using a pseudo-element */
+  }
+  .work-item::before {
+    display: none !important;
+  }
+  .work-item > * {
+    position: relative;
+    z-index: 1;
   }
 
   .job-icon {
@@ -92,6 +94,21 @@ import Animate from "./Animat.astro"
   .desc-list li::marker{
     content: '▸ ';
     color: var(--orange-color)
+  }
+  .h-event {
+    border: 4px solid;
+    border-image: linear-gradient(90deg, #f55, #88f, #0fa, #ff0, #f55) 1;
+    background-clip: padding-box;
+    box-shadow: 0 0 12px 2px rgba(255,255,255,0.08);
+    background-color: rgba(34,34,34,0.1); /* 90% transparent background */
+    padding: 2rem;
+    position: relative;
+    min-height: 25vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
   }
   /* --------------------------------------------------------------------          Responsive         ------------------------------------------------------------------ */
   /* ... existing styles ... */

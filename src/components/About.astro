@@ -7,7 +7,6 @@ import SectionTitle from "./SectionTitle.astro";
 <section id="about" class="h-card" itemscope itemtype="https://schema.org/Person">
   <div class="text">
     <p class="name p-name" itemprop="name" >{about.paragraphs[0]}</p>
-    <p class="name p-name" itemprop="name" style="display: none;" >سجاد سرلکی</p>
 
     <p class="p-summary" itemprop="description">
       {about.paragraphs[1].split("Data Enthusiast")[0]}
@@ -79,11 +78,14 @@ import SectionTitle from "./SectionTitle.astro";
     margin-top: 10%;
   }
   .name {
-    all: unset;
     font-size: 3.75rem;
     line-height: 2rem;
-    font-family: var(--second-font-family);
-    color: #fffd;
+    color: rgba(86, 92, 86, 0.87);
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    font-variant: normal !important;
+    font-variant-caps: normal !important;
+    font-weight: bold;
   }
   .gifText {
     color: var(--blue-color);

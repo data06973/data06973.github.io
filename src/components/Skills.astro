@@ -53,10 +53,21 @@ import Animat from "./Animat.astro";
     position: relative;
     min-width: 50%;
   }
-   .main-skill-item>li li::marker{
-    content: '▸ ';
-    font-size: 1rem;
-    color: #C76CA4
+  .p-skill {
+    border: 4px solid;
+    border-image: linear-gradient(90deg, #f55, #88f, #0fa, #ff0, #f55) 1;
+    background-clip: padding-box;
+    box-shadow: 0 0 12px 2px rgba(255,255,255,0.08);
+    background-color: rgba(34,34,34,0.1);
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .main-skill-item ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  .main-skill-item li {
+    list-style-type: none;
   }
   .icon {
     width: 3rem;
