@@ -115,7 +115,7 @@
 				],
 				"keywords": ["EDA", "Data Analysis", "Python", "Pandas", "Matplotlib"],
 				"links": {
-					"notebook":  "https://github.com/data06973/data06973.github.io/public/asset/notebooks/plumbing_permit_analysis.ipynb"
+					"notebook":  "https://github.com/data06973/data06973.github.io/blob/main/public/asset/notebooks/plumbing_permit_analysis.ipynb"
 				},
 				"imgs": [
 					"/asset/imgs/jupyter.svg"
