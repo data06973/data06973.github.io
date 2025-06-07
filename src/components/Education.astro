@@ -12,7 +12,7 @@ import SectionTitle from "./SectionTitle.astro";
           <div class="degree-content">
             <img
               class="education-img"
-              src={degree.imgs.amirkabir_icon}
+              src={degree.imgs.institution}
               alt="University Icon"
             />
             <h2 class="title" itemprop="name">
@@ -30,22 +30,6 @@ import SectionTitle from "./SectionTitle.astro";
                 <li key={i}>{item}</li>
               ))}
             </ul>
-          </div>
-        </Animat>
-        <Animat class="graduation-imgs" delay="200" animationName="fadeIn-from-left">
-          <div class="photo-wrapper">
-            <img
-              src={degree.imgs.graduation}
-              alt="Graduation Photo"
-              class="grad"
-              loading="lazy"
-            />
-            <img 
-              src={degree.imgs.sardar} 
-              alt="University Photo" 
-              class="sardar" 
-              loading="lazy"
-            />
           </div>
         </Animat>
       </div>

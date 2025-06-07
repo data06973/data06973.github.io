@@ -11,8 +11,8 @@
 	/* Dark theme */
 	--background-color: #12181b;
 	--text-color: #b2becd;
-	--icon-url: url("asset/imgs/moon.png");
-	--gif-icon-url: url("asset/gifs/moon.gif");
+	--icon-url: url("/asset/imgs/moon.png");
+	--gif-icon-url: url("/asset/gifs/moon.gif");
 
 	/*typography */
 	--main-font-family: sofia-pro, sans-serif;
@@ -48,8 +48,8 @@
 	/* Light theme */
 	--background-color: #2125;
 	--text-color: #12181b;
-	--icon-url: url("asset/imgs/sun.png");
-	--gif-icon-url: url("asset/gifs/sun.gif");
+	--icon-url: url("/asset/imgs/sun.png");
+	--gif-icon-url: url("/asset/gifs/sun.gif");
 }
 
 @keyframes fade-in {

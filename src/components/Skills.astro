@@ -26,7 +26,7 @@ import Animat from "./Animat.astro";
     text="Projects"
     color="var(--green-color)"
     hrefLink="#projects"
-    position="right"
+    position="center"
   />
 </section>
 
@@ -60,14 +60,14 @@ import Animat from "./Animat.astro";
   }
   .icon {
     width: 3rem;
-    position: absolute;
-    top: -1.5rem;
-    left: 0%;
-    transform: translateX(-50%);
+    position: static;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.25rem; /* Add vertical space under the image */
   }
   .title {
-    margin: 0.5rem;
-    /* text-decoration-line: underline; */
+    margin: 0.5rem 0 0.5rem 0;
     border-bottom: 1px solid #fff5;
   }
 

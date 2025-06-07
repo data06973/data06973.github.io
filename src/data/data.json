@@ -1,28 +1,26 @@
 {
-	"header": { "title": "" },
+	"header": { "title": "Franco" },
 	"about": {
 		"title": "About Me",
 		"paragraphs": [
-			"I am a Data Internship seeker with no experience..."
+			"I am a Data Internship seeker",
+			"and currently pursuing a Master's in Data Science and Analytics at the University of Calgary."
 		],
 		"social": [
 			{
 				"name": "github",
 				"link": "https://github.com/data06973",
-				"icon": "/asset/imgs/github.png",
-				"animatedIcon": "/asset/gifs/github.gif"
+				"icon": "/asset/imgs/github.png"
 			},
 			{
 				"name": "email",
-				"link": "mailto:cpsc@ucalgary.ca?subject = Feedback&body = Message",
-				"icon": "/asset/imgs/gmail.png",
-				"animatedIcon": "/asset/gifs/gmail.gif"
+				"link": "mailto:data06973@ucalgary.ca?subject = Feedback&body = Message",
+				"icon": "/asset/imgs/gmail.png"
 			},
 			{
 				"name": "resume",
 				"link": "/asset/resume.pdf",
-				"icon": "/asset/imgs/resume_icon.png",
-				"animatedIcon": "/asset/gifs/resume_icon.gif"
+				"icon": "/asset/imgs/resume_icon.png"
 			}
 		]
 	},
@@ -73,17 +71,19 @@
 				],
 				"year": "2024 - Present ",
 				"imgs": {
-					"graduation": "/asset/imgs/last_class.jpeg",
-					"amirkabir_icon": "/asset/imgs/ucal_logo.png"
+					"institution": "/asset/imgs/ucal_logo.png"
 				}
-			},
+		},
 			{
 				"degree": "Bachelor of Technology in Computer Engineering",
-				"institution": "Amirkabir University of Technology, Iran",
+				"institution": "University of Calgary, Canada",
 				"description": [
 					"Relevant Courses : Data Mining, Machine Learning, Database Management Systems, Software Engineering"
 				],
-				"year": "2018 - 2022"
+				"year": "2018 - 2022",
+				"imgs": {
+					"institution": "/asset/imgs/ucal_logo.png"
+				}
 			}
 		]	
 	},
@@ -108,18 +108,19 @@
 		"title": "Projects",
 		"projects": [
 			{
-				"title": "Weather Data Pipeline Automation",
-				"description": "AWS-powered weather data processor",
+				"title": "Plumping permit analysis",
+				"description": "Analyzed plumbing permit data to identify trends and insights",
 				"sub_description": [
-					"Automates API-to-DynamoDB/S3 weather data flows with Lambda, EC2, and Streamlit visualization"
+					"Open data analysis using Python"
 				],
-				"keywords": ["RestAPI", "DynamoDB", "Lambda","S3","EC2","Streamlit"],
+				"keywords": ["EDA", "Data Analysis", "Python", "Pandas", "Matplotlib"],
 				"links": {
-					"github": "https://github.com/Hritvik-gaind/weather-prediction"
+					"notebook":  "https://github.com/data06973/data06973.github.io/public/asset/notebooks/plumbing_permit_analysis.ipynb"
 				},
 				"imgs": [
-					"/asset/imgs/weather.png"
+					"/asset/imgs/jupyter.svg"
 				]
+
 			}
 		]
 	},
