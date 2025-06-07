@@ -120,7 +120,20 @@
 				"imgs": [
 					"/asset/imgs/jupyter.svg"
 				]
-
+			},
+			{
+				"title": "Calgary parking zones EDA",
+				"description": "Exploratory Data Analysis of Calgary parking zones",
+				"sub_description": [
+					"Open data analysis using Python"
+				],
+				"keywords": ["EDA", "Data Analysis", "Python", "Pandas"],
+				"links": {
+					"notebook":  "https://github.com/data06973/data06973.github.io/blob/main/public/asset/notebooks/Calgary_Parking_Zones_EDA.ipynb"
+				},
+				"imgs": [
+					"/asset/imgs/jupyter.svg"
+				]
 			}
 		]
 	},
